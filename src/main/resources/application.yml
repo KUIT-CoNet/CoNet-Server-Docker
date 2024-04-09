@@ -5,6 +5,7 @@ spring:
       "dev": "devDB, devPort, secret, web-mvc"
       "prod": "prodDB, prodPort, secret, web-mvc"
     active: ${ACTIVE_PROFILE}
+
 ---
 
 oauth:
