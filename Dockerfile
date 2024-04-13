@@ -1,5 +1,5 @@
 FROM openjdk:17-jdk
-EXPOSE 9090
+EXPOSE 9000
 ARG JAR_FILE=build/libs/*-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT [ \
