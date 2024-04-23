@@ -80,6 +80,10 @@ spring:
     activate:
       on-profile: "devDB"
 
+  data:
+    redis:
+      host: ${DATA_REDIS_HOST}
+      port: ${DATA_REDIS_PORT}
   accesstoken:
     expired-date: ${ACCESSTOKEN_EXPIREDDATE}
   user:
@@ -95,10 +99,6 @@ spring:
   sql:
     init:
       platform: mysql
-  data:
-    redis:
-      host: ${DATA_REDIS_HOST}
-      port: ${DATA_REDIS_PORT}
   jpa:
     hibernate:
       ddl-auto: update #create
