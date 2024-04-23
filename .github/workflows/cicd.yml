@@ -30,19 +30,19 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew build
         env:
-          ACTIVE_PROFILE: ${{ secrets.ACTIVE_PROFILE }}
+          ACTIVE_PROFILE: ${ secrets.ACTIVE_PROFILE }
 
-          DATASOURCE_URL_DEV: ${{ secrets.DATASOURCE_URL_DEV }}
-          DATASOURCE_USERNAME: ${{ secrets.DATASOURCE_USERNAME }}
-          DATASOURCE_PASSWORD: ${{ secrets.DATASOURCE_PASSWORD }}
+          DATASOURCE_URL_DEV: ${ secrets.DATASOURCE_URL_DEV }
+          DATASOURCE_USERNAME: ${ secrets.DATASOURCE_USERNAME }
+          DATASOURCE_PASSWORD: ${ secrets.DATASOURCE_PASSWORD }
 
-          ACCESSTOKEN_EXPIREDDATE: ${{ secrets.ACCESSTOKEN_EXPIREDDATE }}
+          ACCESSTOKEN_EXPIREDDATE: ${ secrets.ACCESSTOKEN_EXPIREDDATE }
 
-          JWT_EXPIRED_IN: ${{ secrets.JWT_EXPIRED_IN }}
-          JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+          JWT_EXPIRED_IN: ${ secrets.JWT_EXPIRED_IN }
+          JWT_SECRET_KEY: ${ secrets.JWT_SECRET_KEY }
 
-          DATA_REDIS_HOST: ${{ secrets.DATA_REDIS_HOST }}
-          DATA_REDIS_PORT: ${{ secrets.DATA_REDIS_PORT }}
+          DATA_REDIS_HOST: ${secrets.DATA_REDIS_HOST }
+          DATA_REDIS_PORT: ${{ secrets.DATA_REDIS_PORT }
 
           OAUTH_APPLE_CLIENT_ID: ${{ secrets.OAUTH_APPLE_CLIENT_ID }}
           OAUTH_APPLE_NONCE: ${{ secrets.OAUTH_APPLE_NONCE }}
