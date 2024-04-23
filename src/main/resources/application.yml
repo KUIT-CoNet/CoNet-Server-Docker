@@ -80,6 +80,16 @@ spring:
     activate:
       on-profile: "devDB"
 
+  datasource:
+    url: ${DATASOURCE_URL_DEV}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    dbcp2:
+      validation-query: select 1
+  sql:
+    init:
+      platform: mysql
   data:
     redis:
       host: ${DATA_REDIS_HOST}
@@ -88,17 +98,6 @@ spring:
     expired-date: ${ACCESSTOKEN_EXPIREDDATE}
   user:
     default-image: ${USER_DEFAULTIMAGE}
-  datasource:
-#    url: ${DATASOURCE_URL_DEV}
-    url: jdbc:mysql://conet.czimakykwi4f.ap-northeast-2.rds.amazonaws.com:3306/conet
-    username: conet
-    password: conet123
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    dbcp2:
-      validation-query: select 1
-  sql:
-    init:
-      platform: mysql
   jpa:
     hibernate:
       ddl-auto: update #create
