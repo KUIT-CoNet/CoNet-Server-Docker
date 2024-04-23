@@ -80,6 +80,10 @@ spring:
     activate:
       on-profile: "devDB"
 
+  accesstoken:
+    expired-date: ${ACCESSTOKEN_EXPIREDDATE}
+  user:
+    default-image: ${USER_DEFAULTIMAGE}
   datasource:
 #    url: ${DATASOURCE_URL_DEV}
     url: jdbc:mysql://conet.czimakykwi4f.ap-northeast-2.rds.amazonaws.com:3306/conet
@@ -95,10 +99,6 @@ spring:
     redis:
       host: ${DATA_REDIS_HOST}
       port: ${DATA_REDIS_PORT}
-  accesstoken:
-    expired-date: ${ACCESSTOKEN_EXPIREDDATE}
-  user:
-    default-image: ${USER_DEFAULTIMAGE}
   jpa:
     hibernate:
       ddl-auto: update #create
