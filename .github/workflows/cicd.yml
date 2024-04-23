@@ -57,7 +57,7 @@ jobs:
       - name: Docker build
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker build --platform linux/arm64 -t app .
+          docker build --platform linux/arm64/v3 -t app .
           docker tag app ${{ secrets.DOCKER_USERNAME }}/conet:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/conet:latest
 
