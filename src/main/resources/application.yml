@@ -83,8 +83,8 @@ spring:
   datasource:
 #    url: ${DATASOURCE_URL_DEV}
     url: jdbc:mysql://conet.czimakykwi4f.ap-northeast-2.rds.amazonaws.com:3306/conet
-    username: ${DATASOURCE_USERNAME}
-    password: ${DATASOURCE_PASSWORD}
+    username: conet
+    password: conet123
     driver-class-name: com.mysql.cj.jdbc.Driver
     dbcp2:
       validation-query: select 1
