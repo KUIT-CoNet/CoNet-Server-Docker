@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "dev" ]
 
+env:
+  RESOURCE_PATH: ../src/main/resources/application.yml
+
 jobs:
   build:
 
@@ -30,11 +33,11 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew build
         env:
-          ACTIVE_PROFILE: ${{ secrets.ACTIVE_PROFILE }}
+          spring.profiles.active: ${{ secrets.ACTIVE_PROFILE }}
 
-          DATASOURCE_URL_DEV: ${{ secrets.DATASOURCE_URL_DEV }}
-          DATASOURCE_USERNAME: ${{ secrets.DATASOURCE_USERNAME }}
-          DATASOURCE_PASSWORD: ${{ secrets.DATASOURCE_PASSWORD }}
+          spring.datasource.url: ${{ secrets.DATASOURCE_URL_DEV }}
+          spring.datasource.username: ${{ secrets.DATASOURCE_USERNAME }}
+          spring.datasource.password: ${{ secrets.DATASOURCE_PASSWORD }}
 
           ACCESSTOKEN_EXPIREDDATE: ${{ secrets.ACCESSTOKEN_EXPIREDDATE }}
 
