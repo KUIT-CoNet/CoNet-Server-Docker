@@ -33,7 +33,7 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew build
         env:
-          spring.profiles.active: ${{ secrets.ACTIVE_PROFILE }}
+          spring.profiles.active: dev
 
           spring.datasource.url: ${{ secrets.DATASOURCE_URL_DEV }}
           spring.datasource.username: ${{ secrets.DATASOURCE_USERNAME }}
