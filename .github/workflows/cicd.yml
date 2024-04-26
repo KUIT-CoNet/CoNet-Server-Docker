@@ -21,6 +21,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Test env
+        if: env.ACTIVE_PROFILE == 'dev'
+        run: echo "ACTIVE PROFILE is dev"
+        env:
+          ACTIVE_PROFILE: ${{ secrets.ACTIVE_PROFILE }}
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
