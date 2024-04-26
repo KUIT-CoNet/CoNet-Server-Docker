@@ -57,10 +57,10 @@ jobs:
 
       - name: Docker build
         run: |
-          sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          sudo docker build -t app .
-          sudo docker tag app ${{ secrets.DOCKER_USERNAME }}/conet:latest
-          sudo docker push ${{ secrets.DOCKER_USERNAME }}/conet:latest
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker build -t app .
+          docker tag app ${{ secrets.DOCKER_USERNAME }}/conet:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/conet:latest
 
       - name: Deploy
         uses: appleboy/ssh-action@master
@@ -71,8 +71,8 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }} # pem 키
           # 도커 작업
           script: |
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/conet:latest
-            sudo docker stop $(docker ps -a -q)
-            sudo docker run -d --log-driver=syslog -p 9001:9000 ${{ secrets.DOCKER_USERNAME }}/conet:latest
-            sudo docker rm $(docker ps --filter 'status=exited' -a -q)
-            sudo docker image prune -a -f
+            docker pull ${{ secrets.DOCKER_USERNAME }}/conet:latest
+            docker stop $(docker ps -a -q)
+            docker run -d --log-driver=syslog -p 9001:9000 ${{ secrets.DOCKER_USERNAME }}/conet:latest
+            docker rm $(docker ps --filter 'status=exited' -a -q)
+            docker image prune -a -f
