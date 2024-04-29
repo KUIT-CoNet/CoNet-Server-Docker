@@ -47,7 +47,7 @@ jobs:
             echo -e "${{secrets.AWS_S3_ACCESS_KEY}}" | base64 --decode > ./src/main/resources/application.yml
             echo -e "${{secrets.AWS_S3_SECRET_KEY}}" | base64 --decode > ./src/main/resources/application.yml
           
-            echo -e "${{secrets.USER_DAFAULTIMAGE}}" | base64 --decode > ./src/main/resources/application.yml
+            echo -e "${{secrets.USER_DEFAULTIMAGE}}" | base64 --decode > ./src/main/resources/application.yml
 
       - name: Test env
         if: env.ACTIVE_PROFILE == 'dev'
